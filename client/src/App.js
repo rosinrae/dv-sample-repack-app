@@ -8,6 +8,8 @@ import Err404 from './components/Err404.js';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import Product from './components/Product';
+import ProtectedRoute from './components/ProtectedRoute.js'
 
 
 const App = () => (
@@ -17,7 +19,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/products/:id" component={Product} />
       <Route component={Err404} />
     </Switch>
   </div>
